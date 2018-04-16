@@ -1,0 +1,12 @@
+{
+  "name": "email3",
+  "display-name": "Email3 Sift",
+  "description": "technical task",
+  "author": "",
+  "version": "1.0.0",
+  "#": "Please use 'redsift npm' instead of system 'npm' ",
+  "scripts": {},
+  "dependencies": {
+    "@redsift/text-utilities": "^0.1.4"
+  }
+}
