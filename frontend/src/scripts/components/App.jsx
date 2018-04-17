@@ -15,19 +15,20 @@ class App extends Component {
 
   render() {
     const { t } = this.props;
-    console.log('i should render a new things');
-    console.log('this.props', this.props.data[0].value);
+    let data = this.props.data['0'].value
+      ? JSON.parse(this.props.data['0'].value)
+      : null;
+    console.log('type of data', typeof data);
     return (
-      <h1>what is going on?</h1>
-      // <div className="grandContainer">
-      //   <h1>Welcome to the Dashboard</h1>
-      //   <div className="flex-container">
-      //     <Counter />
-      //     <Dmrac />
-      //   </div>
-      //   <h2>Worl Map</h2>
-      //   <Worldmap />
-      // </div>
+      <div className="grandContainer">
+        <h1>Welcome to the Dashboard</h1>
+        <div className="flex-container">
+          <Counter />
+          <Dmrac data={data} />
+        </div>
+        <h2>Worl Map</h2>
+        <Worldmap />
+      </div>
     );
   }
 }

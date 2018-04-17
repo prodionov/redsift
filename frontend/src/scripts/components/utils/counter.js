@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import * as d3 from "d3";
+import React, { Component } from 'react';
+import * as d3 from 'd3';
 
 class Counter extends Component {
   state = {
     data: [10, 40, 30, 20, 60, 80],
-    color: ["#6e7f80", "#536872", "#708090", "#536878", "#4d6776", "#7591b0"]
+    color: ['#6e7f80', '#536872', '#708090', '#536878', '#4d6776', '#7591b0'],
   };
 
   width = 0.45 * window.innerWidth;
@@ -32,30 +32,29 @@ class Counter extends Component {
 
   initialise = () => {
     let data = this.compileDataSet(this.state.data, this.state.color);
-    console.log("data", data);
-    const svg = d3.select("#counter");
+    const svg = d3.select('#counter');
 
     const g = svg
-      .append("g")
+      .append('g')
       .attr(
-        "transform",
-        "translate(" + this.width / 2.3 + "," + this.height / 1.8 + ")"
+        'transform',
+        'translate(' + this.width / 2.3 + ',' + this.height / 1.8 + ')'
       );
 
-    g.append("g").attr("class", "slices");
-    g.append("g").attr("class", "labels");
+    g.append('g').attr('class', 'slices');
+    g.append('g').attr('class', 'labels');
 
     let slice = svg
-      .select(".slices")
-      .selectAll("path.slice")
+      .select('.slices')
+      .selectAll('path.slice')
       .data(this.pie(this.state.data))
       .enter()
-      .append("path")
-      .attr("d", this.arc)
-      .style("fill", (d, i) => {
+      .append('path')
+      .attr('d', this.arc)
+      .style('fill', (d, i) => {
         return this.state.color[i];
       })
-      .attr("class", "slice");
+      .attr('class', 'slice');
   };
 
   render() {

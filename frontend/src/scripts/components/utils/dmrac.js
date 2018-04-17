@@ -1,54 +1,52 @@
-import React, { Component } from "react";
-import * as d3 from "d3";
+import React, { Component } from 'react';
 
-const Email = ({ sender, dkim, spf }) => {
+const Email = ({ from, dkim, spf }) => {
   return (
     <li className="email-list-item">
-      <span>
-        <strong>{sender}</strong>
-      </span>
-      <img
+      <p>
+        <strong>{from.name}</strong>
+        dkim = {dkim ? 'pass' : 'fail'}
+        spf = {spf ? 'pass' : 'fail'}
+      </p>
+      {/* <img
         className="ticks"
         src={
-          dkim ? require("./assets/cross.png") : require("./assets/tick.png")
+          dkim ? require('./assets/cross.png') : require('./assets/tick.png')
         }
         height="15rem"
       />
       <img
         className="ticks"
-        src={spf ? require("./assets/cross.png") : require("./assets/tick.png")}
+        src={spf ? require('./assets/cross.png') : require('./assets/tick.png')}
         height="15rem"
-      />
+      /> */}
     </li>
   );
 };
 
 class Dmrac extends Component {
-  state = {
-    emails: [
-      { id: 1, sender: "jack@redsift.io", dkim: true, spf: true },
-      { id: 2, sender: "rpavelleron@gmail.com", dkim: true, spf: false },
-      { id: 3, sender: "james.bond@gmail.com", dkim: false, spf: false },
-      { id: 4, sender: "rihanna@hollywood.com", dkim: true, spf: true },
-      { id: 5, sender: "ronaldo@football.com", dkim: true, spf: true }
-    ]
-  };
+  state = {};
 
   componentDidMount() {}
 
   render() {
-    const { emails } = this.state;
-    console.log("emails", emails);
-    return (
-      <div>
-        <h2>Latest emails</h2>
-        <div id="dmrac" className="first-line">
-          <ul className="emails-list">
-            {emails.map(email => <Email key={email.id} {...email} />)}
-          </ul>
+    console.log('trying to render Dmrac');
+    const emails = this.props.data;
+    if (emails) {
+      console.log('emails', typeof emails);
+      return (
+        <div>
+          <h2>Latest emails</h2>
+          <div id="dmrac" className="first-line">
+            <ul className="emails-list">
+              {emails.map(email => <Email key={email.id} {...email} />)}
+            </ul>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <h2>No data to show</h2>;
+    }
   }
 }
 

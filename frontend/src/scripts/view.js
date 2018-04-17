@@ -21,7 +21,6 @@ export default class MyView extends SiftView {
     let results = data.map(d => {
       return JSON.parse(d.value);
     });
-    console.log('views summary', results);
     return results;
   }
 
