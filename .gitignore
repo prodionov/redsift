@@ -21,3 +21,4 @@ node_modules/
 
 # Go
 server/vendor/
+npm-debug*

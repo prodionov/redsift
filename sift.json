@@ -29,7 +29,7 @@
               }
             ]
           },
-          "wants": ["archive", "textBody", "strippedHtmlBody", "headers"],
+          "wants": ["archive", "headers"],
           "inMailbox": "inbox"
         }
       },
@@ -47,7 +47,7 @@
           "javascript": "server/node1.js"
         },
         "outputs": {
-          "count": {}
+          "emailOutput": {}
         }
       }
     ],
@@ -56,7 +56,7 @@
     },
     "outputs": {
       "exports": {
-        "count": {
+        "emailOutput": {
           "key$schema": "string"
         }
       }

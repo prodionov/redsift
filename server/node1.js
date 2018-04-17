@@ -2,7 +2,16 @@
  * Email3 Sift. DAG's 'Node1' node implementation
  */
 "use strict";
-let textUtils = require("@redsift/text-utilities");
+
+const dkimResults = [
+  "pass",
+  "fail",
+  "none",
+  "policy",
+  "neutral",
+  "temperror",
+  "permerror"
+];
 // Entry point for DAG node
 // got ={
 //   in: ... // contains the key/value pairs that match the given query
@@ -15,28 +24,31 @@ let textUtils = require("@redsift/text-utilities");
 module.exports = function(got) {
   const inData = got.in;
 
-  console.log("email3: node1.js: data received:", inData.data);
-
   const json = inData.data.map(d => JSON.parse(d.value));
-  const others = json;
+  let { headers } = json[0];
 
-  others.map(value => {
-    let text = value.textBody || value.strippedHtmlBody || "";
-    return text;
-  });
-  json.forEach(function(value, i) {
-    console.log("datum#", i, "value:", value);
-  });
+  let spfRegexp = /spf=([^\s]+)/;
+  let dkimRegexp = /dkim=([^\s]+)/;
 
-  let counts = others.map(value => {
-    let text = value.textBody || value.strippedHtmlBody || "";
-    let count = textUtils.splitWords(textUtils.trimEmailThreads(text)).length;
+  let results = json.map(value => {
+    let { id, headers, from } = value;
     return {
-      key: "word_count",
-      value: count
+      key: "email_output",
+      value: {
+        id,
+        from,
+        dkim:
+          headers["Authentication-Results"].match(dkimRegexp)[1] === "pass"
+            ? true
+            : false,
+        spf:
+          headers["Authentication-Results"].match(spfRegexp)[1] === "pass"
+            ? true
+            : false
+      }
     };
   });
 
-  console.log("counter node.js: will output:", counts);
-  return counts;
+  console.log("counter node.js: will output:", results);
+  return results;
 };
