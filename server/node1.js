@@ -24,8 +24,8 @@ const dkimResults = [
 module.exports = function(got) {
   const inData = got.in;
 
-  const json = inData.data.map(d => JSON.parse(d.value));
-  let { headers } = json[0];
+  let json = inData.data.map(d => JSON.parse(d.value));
+  // json = Array.from(json);
 
   let spfRegexp = /spf=([^\s]+)/;
   let dkimRegexp = /dkim=([^\s]+)/;
@@ -33,22 +33,18 @@ module.exports = function(got) {
   let results = json.map(value => {
     let { id, headers, from } = value;
     return {
-      key: "email_output",
-      value: {
-        id,
-        from,
-        dkim:
-          headers["Authentication-Results"].match(dkimRegexp)[1] === "pass"
-            ? true
-            : false,
-        spf:
-          headers["Authentication-Results"].match(spfRegexp)[1] === "pass"
-            ? true
-            : false
-      }
+      id,
+      from,
+      dkim:
+        headers["Authentication-Results"].match(dkimRegexp)[1] === "pass"
+          ? true
+          : false,
+      spf:
+        headers["Authentication-Results"].match(spfRegexp)[1] === "pass"
+          ? true
+          : false
     };
   });
-
   console.log("counter node.js: will output:", results);
-  return results;
+  return [{ key: "email_output", value: results }];
 };
