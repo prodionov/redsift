@@ -45,6 +45,5 @@ module.exports = function(got) {
           : false
     };
   });
-  console.log("counter node.js: will output:", results);
   return [{ key: "email_output", value: results }];
 };
