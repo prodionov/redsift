@@ -8,18 +8,6 @@ const Email = ({ from, dkim, spf }) => {
         dkim = {dkim ? 'pass' : 'fail'}
         spf = {spf ? 'pass' : 'fail'}
       </p>
-      {/* <img
-        className="ticks"
-        src={
-          dkim ? require('./assets/cross.png') : require('./assets/tick.png')
-        }
-        height="15rem"
-      />
-      <img
-        className="ticks"
-        src={spf ? require('./assets/cross.png') : require('./assets/tick.png')}
-        height="15rem"
-      /> */}
     </li>
   );
 };
@@ -30,7 +18,6 @@ class Dmrac extends Component {
   componentDidMount() {}
 
   render() {
-    console.log('trying to render Dmrac');
     const emails = this.props.data;
     if (emails) {
       console.log('emails', typeof emails);
@@ -38,6 +25,14 @@ class Dmrac extends Component {
         <div>
           <h2>Latest emails</h2>
           <div id="dmrac" className="first-line">
+            <table>
+              <tr>
+                <th>From</th>
+                <th>Dkim</th>
+                <th>Spf</th>
+              </tr>
+              <tbody />
+            </table>
             <ul className="emails-list">
               {emails.map(email => <Email key={email.id} {...email} />)}
             </ul>

@@ -23,7 +23,7 @@ class App extends Component {
       <div className="grandContainer">
         <h1>Welcome to the Dashboard</h1>
         <div className="flex-container">
-          <Counter />
+          <Counter data={[10, 15, 10, 15, 10, 10]} />
           <Dmrac data={data} />
         </div>
         <h2>Worl Map</h2>

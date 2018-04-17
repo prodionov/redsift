@@ -25,6 +25,7 @@ export default class MyView extends SiftView {
   }
 
   presentView(value) {
+    console.log('presentView typeof value', typeof value);
     render(
       <I18nextProvider i18n={i18n}>
         <App data={value.data} />
