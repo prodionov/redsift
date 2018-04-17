@@ -1,0 +1,70 @@
+.grandContainer {
+  background-color: #e8e8ee;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.first-line {
+  justify-content: space-around;
+}
+
+#worldMap {
+  width: 82vw;
+  height: 40vh;
+  background-color: #ffffff;
+}
+
+#counter {
+  width: 40vw;
+  height: 40vh;
+  background-color: #ffffff;
+}
+
+#dmrac {
+  width: 40vw;
+  height: 40vh;
+  background-color: #ffffff;
+  margin: 1rem;
+}
+
+svg {
+  margin: 1rem;
+}
+
+h2 {
+  margin: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0rem;
+  font-family: ubuntu;
+  color: #33401c;
+}
+
+h1 {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  font-family: ubuntu;
+  color: #33401c;
+}
+
+.email-list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /*flex-direction: column;*/
+  padding: 0.5rem;
+}
+
+.emails-list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  /*align-items: flex-start;*/
+  justify-content: flex-start;
+}
+
+.ticks {
+  justify-content: flex-end;
+}
