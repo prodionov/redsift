@@ -8,12 +8,12 @@ import { translate } from 'react-i18next';
 class App extends Component {
   static propTypes = {
     t: PropTypes.function,
-  }
+  };
 
   render() {
     const { t } = this.props;
-
-    return <h1>{t('app-name')}</h1>
+    console.log('this.props', this.props.data);
+    return <h1>{t('app-name')}</h1>;
   }
 }
 

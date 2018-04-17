@@ -12,9 +12,9 @@ export default class MyController extends SiftController {
 
   // for more info: http://docs.redsift.com/docs/client-code-siftcontroller
   loadView(state) {
-    console.log('counter: loadView', state);
+    console.log('emailUpdate: loadView', state);
     // Register for storage update events on the "x" bucket so we can update the UI
-    this.storage.subscribe(['count'], this._suHandler);
+    this.storage.subscribe(['emailOutput'], this._suHandler);
     switch (state.type) {
       case 'email-thread':
         return {
@@ -24,31 +24,31 @@ export default class MyController extends SiftController {
       case 'summary':
         return {
           html: 'summary.html',
-          data: this.getCount(), //this.getX()
+          data: this.getResults(), //this.getX()
         };
       default:
-        console.error('counter: unknown Sift type: ', state.type);
+        console.error('emailUpdate: unknown Sift type: ', state.type);
     }
   }
 
   //Event: storage update
   onStorageUpdate(value) {
-    console.log('counter: onStorageUpdate: ', value);
-    return this.getCount().then(xe => {
+    console.log('emailUpdate: onStorageUpdate: ', value);
+    return this.getResults().then(xe => {
       // Publish events from 'x' to view
-      this.publish('counts', xe);
+      this.publish('outputs', xe);
     });
   }
 
-  getCount() {
+  getResults() {
     return this.storage
       .get({
-        bucket: 'count',
-        keys: ['word_count'],
+        bucket: 'emailOutput',
+        keys: ['email_output'],
       })
       .then(values => {
-        console.log('counter: getCount returned:', values);
-        return values[0];
+        console.log('emailUpdate: getResults returned:', values);
+        return values;
       });
   }
 }

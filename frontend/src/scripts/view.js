@@ -14,12 +14,21 @@ export default class MyView extends SiftView {
   constructor() {
     // You have to call the super() method to initialize the SiftView base class.
     super();
+    this.controller.subscribe('outputs', this.onOutputs.bind(this));
   }
 
-  presentView(/*value*/) {
+  onOutputs(data) {
+    let results = data.map(d => {
+      return JSON.parse(d.value);
+    });
+    console.log('views summary', results);
+    return results;
+  }
+
+  presentView(value) {
     render(
       <I18nextProvider i18n={i18n}>
-        <App />
+        <App data={value.data} />
       </I18nextProvider>,
       document.querySelector('#root')
     );
