@@ -21,7 +21,7 @@ from this dashboard I have selected the ring(or half pie) chart, the world map a
 
 At this stage the redsift version with the last minute styling looks like this:
 
-<img src="https://1.downloader.disk.yandex.com/preview/cc486f090cfb10f7fd99a2692dd5cedba1bb39c716dca07f843ae0039ae58cb0/inf/0acWjf_Znov2i6P-XTV3TAdAv7Eg30pclsfWj4Y5KnFxWEq_YjJOxFWwiti2_i8FhAU4jjmJguxp4rUiM_Nrfg%3D%3D?uid=2395538&filename=siftwithCss.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=1186x550" width="300">
+<img src="https://downloader.disk.yandex.ru/preview/8467f871adef2e212271531d59c8b730c87798cd330135dd3bd6c63df524392d/5ad75ff6/0acWjf_Znov2i6P-XTV3TAdAv7Eg30pclsfWj4Y5KnFxWEq_YjJOxFWwiti2_i8FhAU4jjmJguxp4rUiM_Nrfg%3D%3D?uid=0&filename=siftwithCss.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048" width="300">
 
 ### Why specifically these charts?
 
@@ -35,5 +35,3 @@ However, for technical reasons they can't be used to show the country of email o
 ### Main Limitations
 
 * The main limitation is that at this stage dashboard charts are static. The dashboard is not deployed on redsift and has no functionality to update when a new email arrives
-
-* The CSS is not added to platform's version
