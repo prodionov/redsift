@@ -19,9 +19,9 @@ from this dashboard I have selected the ring(or half pie) chart, the world map a
 
 <img src="https://downloader.disk.yandex.ru/preview/822cae0941ec480e2089c57de702cace6f0420133897f9915ba9d1b7244a501d/5ad722de/0acWjf_Znov2i6P-XTV3THMBlItP7lM-dU0MUZSZgYk8Di2oHwVrxgHlENP8geMW0TOKp4Sc_lATzhDriZXXoA%3D%3D?uid=0&filename=heroku_version.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048" width="300"/>
 
-At this stage the redsift version without any styling looks like this:
+At this stage the redsift version with the last minute styling looks like this:
 
-<img src="https://downloader.disk.yandex.ru/preview/68fc5696870c7556e76f3d77faf1b8d61a9cddeb3550faf4bcf488d9ef1bbc72/5ad72699/0acWjf_Znov2i6P-XTV3TBrgTnTmfIqufgGsamS1Kr1nBWUz0lKHnNDtDNdoliPfmV1C4jWjauUMXhB7S2XPVg%3D%3D?uid=0&filename=redsift.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048" width="300">
+<img src="https://1.downloader.disk.yandex.com/preview/cc486f090cfb10f7fd99a2692dd5cedba1bb39c716dca07f843ae0039ae58cb0/inf/0acWjf_Znov2i6P-XTV3TAdAv7Eg30pclsfWj4Y5KnFxWEq_YjJOxFWwiti2_i8FhAU4jjmJguxp4rUiM_Nrfg%3D%3D?uid=2395538&filename=siftwithCss.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=1186x550" width="300">
 
 ### Why specifically these charts?
 
