@@ -1,12 +1,121 @@
-@import "./breakpoints.css";
+@import './breakpoints.css';
 
 :root {
   --font-color: rgb(51, 51, 51);
   --background-color: #f5f5f5;
 }
 
-body, html {
+body,
+html {
   background: var(--background-color);
   color: var(--font-color);
   margin: 0;
+}
+
+.grandContainer {
+  background-color: #e8e8ee;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.first-line {
+  justify-content: space-around;
+}
+
+#worldMap {
+  width: 82vw;
+  height: 40vh;
+  background-color: #ffffff;
+}
+
+#counter {
+  width: 40vw;
+  height: 40vh;
+  background-color: #ffffff;
+}
+
+#dmrac {
+  width: 40vw;
+  height: 40vh;
+  background-color: #ffffff;
+  margin: 1rem;
+}
+
+svg {
+  margin: 1rem;
+}
+
+h2 {
+  margin: 0.5rem;
+  margin-left: 2rem;
+  margin-bottom: 0rem;
+  font-family: ubuntu;
+  color: #33401c;
+}
+
+h3 {
+  font-family: ubuntu;
+  color: #bf0000;
+  /*display: flex;*/
+  text-align: right;
+  margin-right: 3rem;
+}
+
+h1 {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  font-family: ubuntu;
+  color: #33401c;
+}
+
+.email-list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.1rem;
+  font-family: ubuntu;
+}
+
+.emails-list {
+  width: 80%;
+  height: 100%;
+  /*display: flex;*/
+  flex-direction: column;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+
+.ticks {
+  align-self: flex-start;
+}
+
+path.slice {
+  stroke-width: 2px;
+}
+
+polyline {
+  opacity: 0.3;
+  stroke: black;
+  stroke-width: 2px;
+  fill: none;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #708090;
+  color: white;
+}
+tr {
+  width: 100%;
+  text-align: center;
+  table-layout: fixed;
 }

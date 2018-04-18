@@ -5,8 +5,8 @@ const Email = ({ from, dkim, spf }) => {
     <li className="email-list-item">
       <p>
         <strong>{from.name}</strong>
-        dkim = {dkim ? 'pass' : 'fail'}
-        spf = {spf ? 'pass' : 'fail'}
+        {dkim ? ' pass' : ' fail'}
+        {spf ? ' pass' : ' fail'}
       </p>
     </li>
   );
