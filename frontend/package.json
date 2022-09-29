@@ -39,7 +39,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "d3": "^5.0.1",
+    "d3": "^7.6.1",
     "topojson-client": "^3.0.0"
   }
 }
