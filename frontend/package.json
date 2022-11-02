@@ -22,7 +22,7 @@
     "cssnano": "^3.10.0",
     "eslint": "^4.13.1",
     "eslint-plugin-react": "^7.5.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "i18next": "^10.2.1",
     "i18next-browser-languagedetector": "^2.1.0",
     "i18next-xhr-backend": "^1.5.0",
